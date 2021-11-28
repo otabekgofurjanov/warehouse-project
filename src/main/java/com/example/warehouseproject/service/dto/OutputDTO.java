@@ -18,7 +18,7 @@ public class OutputDTO {
     private String factureNumber;
 
     @NotNull
-    private Long currency_id;
+    private Long client_id;
 
     @NotNull
     private Long supplier_id;
@@ -58,12 +58,12 @@ public class OutputDTO {
         this.factureNumber = factureNumber;
     }
 
-    public Long getCurrency_id() {
-        return currency_id;
+    public Long getClient_id() {
+        return client_id;
     }
 
-    public void setCurrency_id(Long currency_id) {
-        this.currency_id = currency_id;
+    public void setClient_id(Long client_id) {
+        this.client_id = client_id;
     }
 
     public Long getSupplier_id() {

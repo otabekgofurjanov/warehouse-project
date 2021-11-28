@@ -32,7 +32,7 @@ public class CurrencyService {
 
     public CurrencyDTO update(CurrencyDTO currencyDTO) {
         Currency currency = currencyMapper.toEntity(currencyDTO);
-        currency = currencyRepository.findByCurrenceId(currency.getId());
+        currency = currencyRepository.findCurrencyById(currency.getId());
         if (currency.getId() != null) {
             currency.setName(currency.getName());
             currency.setActive(currency.isActive());

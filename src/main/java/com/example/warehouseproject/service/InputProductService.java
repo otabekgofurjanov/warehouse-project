@@ -32,7 +32,7 @@ public class InputProductService {
 
 	public InputProductDTO update(InputProductDTO inputProductDTO) {
 		InputProduct inputProduct = inputProductMapper.toEntity(inputProductDTO);
-		inputProduct = inputProductRepository.findByInputProductId(inputProduct.getId());
+		inputProduct = inputProductRepository.findInputProductById(inputProduct.getId());
 		if (inputProduct.getId() != null) {
 			inputProduct.setProduct(inputProduct.getProduct());
 			inputProduct.setInput(inputProduct.getInput());

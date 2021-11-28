@@ -32,7 +32,7 @@ public class ClientService {
 
     public ClientDTO update(ClientDTO clientDTO) {
         Client client = clientMapper.toEntity(clientDTO);
-        client = clientRepository.findByClientId(client.getId());
+        client = clientRepository.findClientById(client.getId());
         if (client.getId() != null) {
             client.setName(client.getName());
             client.setPhoneNumber(client.getPhoneNumber());

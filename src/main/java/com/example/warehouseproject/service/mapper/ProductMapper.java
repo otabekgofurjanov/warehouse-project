@@ -9,12 +9,12 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", uses = {MeasurementMapper.class, CategoryMapper.class})
 public interface ProductMapper extends EntityMapper<ProductDTO, Product> {
 
-    @Mapping(source = "measurement.id", target = "measurementId")
-    @Mapping(source = "category.id", target = "categoryId")
+    @Mapping(source = "measurement.id", target = "measurement_id")
+    @Mapping(source = "category.id", target = "category_id")
     ProductDTO toDto(Product product);
 
-    @Mapping(source = "measurementId", target = "measurement")
-    @Mapping(source = "categoryId", target = "category")
+    @Mapping(source = "measurement_id", target = "measurement")
+    @Mapping(source = "category_id", target = "category")
     Product toEntity(ProductDTO productDTO);
 
     default Product fromId(Long id) {

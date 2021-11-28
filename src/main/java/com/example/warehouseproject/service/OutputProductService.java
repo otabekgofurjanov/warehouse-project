@@ -32,7 +32,7 @@ public class OutputProductService {
 
 	public OutputProductDTO update(OutputProductDTO outputProductDTO) {
 		OutputProduct outputProduct = outputProductMapper.toEntity(outputProductDTO);
-		outputProduct = outputProductRepository.findByOutputProductId(outputProduct.getId());
+		outputProduct = outputProductRepository.findOutputProductById(outputProduct.getId());
 		if (outputProduct.getId() != null) {
 			outputProduct.setOutput(outputProduct.getOutput());
 			outputProduct.setProduct(outputProduct.getProduct());

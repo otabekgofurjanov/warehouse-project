@@ -29,7 +29,7 @@ public class AttachmentContentService {
 
     public AttachmentContentDTO update(AttachmentContentDTO attachmentContentDTO) {
         AttachmentContent attachmentContent = attachmentContentMapper.toEntity(attachmentContentDTO);
-        attachmentContent = attachmentContentRepository.findByAttachmentContentId(attachmentContent.getId());
+        attachmentContent = attachmentContentRepository.findAttachmentContentById(attachmentContent.getId());
         if (attachmentContent.getId() != null) {
             attachmentContent.setAttachment(attachmentContent.getAttachment());
             attachmentContent = attachmentContentRepository.save(attachmentContent);

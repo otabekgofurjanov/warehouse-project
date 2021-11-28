@@ -8,14 +8,14 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", uses = {ClientMapper.class, SupplierMapper.class, WarehouseMapper.class})
 public interface OutputMapper extends EntityMapper<OutputDTO, Output> {
 
-	@Mapping(source = "client.id", target = "clientId")
-	@Mapping(source = "supplier.id", target = "supplierId")
-	@Mapping(source = "warehouse.id", target = "warehouseId")
+	@Mapping(source = "client.id", target = "client_id")
+	@Mapping(source = "supplier.id", target = "supplier_id")
+	@Mapping(source = "warehouse.id", target = "warehouse_id")
 	OutputDTO toDto(Output output);
 
-	@Mapping(source = "clientId", target = "client")
-	@Mapping(source = "supplierId", target = "supplier")
-	@Mapping(source = "warehouseId", target = "warehouse")
+	@Mapping(source = "client_id", target = "client")
+	@Mapping(source = "supplier_id", target = "supplier")
+	@Mapping(source = "warehouse_id", target = "warehouse")
 	Output toEntity(OutputDTO outputDTO);
 
 	default Output fromId(Long id) {

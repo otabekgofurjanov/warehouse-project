@@ -32,7 +32,7 @@ public class SupplierService {
 
 	public SupplierDTO update(SupplierDTO supplierDTO) {
 		Supplier supplier = supplierMapper.toEntity(supplierDTO);
-		supplier = supplierRepository.findBySupplierId(supplier.getId());
+		supplier = supplierRepository.findSupplierById(supplier.getId());
 		if (supplier.getId() != null) {
 			supplier.setName(supplier.getName());
 			supplier.setPhoneNumber(supplier.getPhoneNumber());

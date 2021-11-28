@@ -33,7 +33,7 @@ public class MeasurementService {
 
 	public MeasurementDTO update(MeasurementDTO measurementDTO) {
 		Measurement measurement = measurementMapper.toEntity(measurementDTO);
-		measurement = measurementRepository.findByMeasurementId(measurement.getId());
+		measurement = measurementRepository.findMeasurementById(measurement.getId());
 		if (measurement.getId() != null) {
 			measurement.setName(measurement.getName());
 			measurement.setActive(measurement.isActive());

@@ -32,7 +32,7 @@ public class OutputService {
 
 	public OutputDTO update(OutputDTO outputDTO) {
 		Output output = outputMapper.toEntity(outputDTO);
-		output = outputRepository.findByOutputId(output.getId());
+		output = outputRepository.findOutputById(output.getId());
 		if (output.getId() != null) {
 			output.setCode(output.getCode());
 			output.setClient(output.getClient());

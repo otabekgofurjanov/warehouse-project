@@ -32,7 +32,7 @@ public class CategoryService {
 
     public CategoryDTO update(CategoryDTO categoryDTO) {
         Category category = categoryMapper.toEntity(categoryDTO);
-        category = categoryRepository.findByCategoryId(category.getId());
+        category = categoryRepository.findCategoryById(category.getId());
         if (category.getId() != null) {
             category.setName(category.getName());
             category.setActive(category.isActive());

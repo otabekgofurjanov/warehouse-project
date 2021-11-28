@@ -31,7 +31,7 @@ public class AllProductService {
 
     public AllProductDTO update(AllProductDTO allProductDTO) {
         AllProduct allProduct = allProductMapper.toEntity(allProductDTO);
-        allProduct = allProductRepository.findByAllProductId(allProduct.getId());
+        allProduct = allProductRepository.findAllProductById(allProduct.getId());
         if (allProduct.getId() != null) {
             allProduct.setProduct(allProduct.getProduct());
             allProduct.setActive(allProduct.getActive());

@@ -2,16 +2,15 @@ package com.example.warehouseproject.service.mapper;
 
 import com.example.warehouseproject.domain.AttachmentContent;
 import com.example.warehouseproject.service.dto.AttachmentContentDTO;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring", uses = {AttachmentMapper.class})
 public interface AttachmentContentMapper extends EntityMapper<AttachmentContentDTO, AttachmentContent> {
 
-    @Mapping(source = "attachment.id", target = "attachmentId")
+    @Mapping(source = "attachment.id", target = "attachment_id")
     AttachmentContentDTO toDto(AttachmentContent attachmentContent);
 
-    @Mapping(source = "attachmentId", target = "attachment")
+    @Mapping(source = "attachment_id", target = "attachment")
     AttachmentContent toEntity(AttachmentContentDTO attachmentContentDTO);
 
 

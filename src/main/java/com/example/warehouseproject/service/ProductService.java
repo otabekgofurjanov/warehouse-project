@@ -32,7 +32,7 @@ public class ProductService {
 
 	public ProductDTO update(ProductDTO productDTO) {
 		Product product = productMapper.toEntity(productDTO);
-		product = productRepository.findByProductId(product.getId());
+		product = productRepository.findProductById(product.getId());
 		if (product.getId() != null) {
 			product.setName(product.getName());
 			product.setActive(product.getActive());

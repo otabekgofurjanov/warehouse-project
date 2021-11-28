@@ -32,7 +32,7 @@ public class InputService {
 
 	public InputDTO update(InputDTO inputDTO) {
 		Input input = inputMapper.toEntity(inputDTO);
-		input = inputRepository.findByInputId(input.getId());
+		input = inputRepository.findInputById(input.getId());
 		if (input.getId() != null) {
 			input.setCode(input.getCode());
 			input.setDate(input.getDate());

@@ -32,7 +32,7 @@ public class AttachmentService {
 
     public AttachmentDTO update(AttachmentDTO attachmentDTO) {
         Attachment attachment = attachmentMapper.toEntity(attachmentDTO);
-        attachment = attachmentRepository.findByAttachmentId(attachment.getId());
+        attachment = attachmentRepository.findAttachmentById(attachment.getId());
         if (attachment.getId() != null) {
             attachment.setName(attachment.getName());
             attachment = attachmentRepository.save(attachment);

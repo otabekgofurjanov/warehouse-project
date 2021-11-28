@@ -32,7 +32,7 @@ public class WarehouseService {
 
 	public WarehouseDTO update(WarehouseDTO warehouseDTO) {
 		Warehouse warehouse = warehouseMapper.toEntity(warehouseDTO);
-		warehouse = warehouseRepository.findByWarehouseId(warehouse.getId());
+		warehouse = warehouseRepository.findWarehouseById(warehouse.getId());
 		if (warehouse.getId() != null) {
 			warehouse.setName(warehouse.getName());
 			warehouse.setActive(warehouse.isActive());

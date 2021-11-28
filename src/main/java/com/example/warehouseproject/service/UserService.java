@@ -32,7 +32,7 @@ public class UserService {
 
 	public UserDTO update(UserDTO userDTO) {
 		User user = userMapper.toEntity(userDTO);
-		user = userRepository.findByUserId(user.getId());
+		user = userRepository.findUserById(user.getId());
 		if (user.getId() != null) {
 			user.setFirstName(user.getFirstName());
 			user.setLastName(user.getLastName());
