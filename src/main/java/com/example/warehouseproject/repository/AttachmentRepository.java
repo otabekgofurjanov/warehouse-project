@@ -8,7 +8,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AttachmentRepository extends JpaRepository<Attachment, Long> {
-
-    @Query("select a from Attachment a where a.id = :id")
-    Attachment findAttachmentById(@Param("id") Long id);
 }

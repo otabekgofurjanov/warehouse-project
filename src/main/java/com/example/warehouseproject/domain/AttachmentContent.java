@@ -9,7 +9,7 @@ public class AttachmentContent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Byte bytes;
+    private byte[] bytes;
 
     @OneToOne
     private Attachment attachment;
@@ -22,11 +22,11 @@ public class AttachmentContent {
         this.id = id;
     }
 
-    public Byte getBytes() {
+    public byte[] getBytes() {
         return bytes;
     }
 
-    public void setBytes(Byte bytes) {
+    public void setBytes(byte[] bytes) {
         this.bytes = bytes;
     }
 
@@ -34,7 +34,7 @@ public class AttachmentContent {
         return attachment;
     }
 
-    public void setAttachment(Attachment attechment) {
-        this.attachment = attechment;
+    public void setAttachment(Attachment attachment) {
+        this.attachment = attachment;
     }
 }

@@ -8,7 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AttachmentContentRepository extends JpaRepository<AttachmentContent, Long> {
-
-    @Query("select ac from AttachmentContent ac where ac.id = :id")
-    AttachmentContent findAttachmentContentById(@Param("id") Long id);
+    AttachmentContent findByAttachment_Id(Long id);
 }
